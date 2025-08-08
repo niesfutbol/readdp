@@ -1,5 +1,6 @@
 write_csv <- function(datos, file) {
-  directory <- dirname(file)
+  Path_Worker <- new_path_worker(file)
+  directory <- Path_Worker$directory
   name <- basename(file) |>
     stringr::str_split("\\.")
   paquete <-
