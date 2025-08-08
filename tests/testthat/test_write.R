@@ -1,3 +1,7 @@
+tear_down <- function(folder) {
+  unlink(folder, recursive = TRUE, force = TRUE)
+}
+
 describe("write_csv", {
   example_data <- tibble::tibble(
     a = 1:5,
@@ -9,5 +13,6 @@ describe("write_csv", {
     write_csv(example_data, path_example)
     expect_true(file.exists(path_example))
     expect_true(file.exists("/workdir/borrame/datapackage.json"))
+    tear_down("/workdir/borrame")
   })
 })
