@@ -14,4 +14,9 @@ describe("path_worker", {
     obtained_filename <- Path_Worker$filename
     expect_equal(obtained_filename, expected_filename)
   })
+  it("Check data package path", {
+    expected_data_package_path <- "results/datapackages.json"
+    obtained_data_package_path <- Path_Worker$datapackage_path
+    expect_equal(obtained_data_package_path, expected_data_package_path)
+  })
 })
