@@ -13,6 +13,6 @@ new_path_worker <- function(path_example) {
 }
 
 .get_data_package_path <- function(path_example) {
-  data_package_path <- glue::glue("{dirname(path_example)}/datapackages.json")
+  data_package_path <- glue::glue("{dirname(path_example)}/datapackage.json")
   return(data_package_path)
 }
