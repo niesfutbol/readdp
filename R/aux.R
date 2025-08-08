@@ -1,7 +1,7 @@
 new_path_worker <- function(path_example) {
   structure <- list(
     directory = dirname(path_example), filename = .get_filename(path_example),
-    datapackage_path = .get_data_package_path()
+    datapackage_path = .get_data_package_path(path_example)
   )
   class(structure) <- "path_worker"
   return(structure)
@@ -12,6 +12,7 @@ new_path_worker <- function(path_example) {
   return(filename)
 }
 
-.get_data_package_path <- function() {
-  return("results/datapackages.json")
+.get_data_package_path <- function(path_example) {
+  data_package_path <- glue::glue("{dirname(path_example)}/datapackages.json")
+  return(data_package_path)
 }
