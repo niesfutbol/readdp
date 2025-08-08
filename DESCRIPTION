@@ -1,5 +1,5 @@
-Package: templater
-Title: Template for R projects
+Package: readdp
+Title: Read datapackage
 Authors@R: c(
     person(given = "nies futbol",
            family = "nies futbol",
@@ -7,7 +7,7 @@ Authors@R: c(
            email = "nepo@nies.futbol"
            ))
 Config/testthat/edition: 3
-Description: Plantilla de Ciencia de Datos en nies.futbol para proyectos en R
+Description: Herramientas para leer y escribir datapackages simulando la interface de `readr`
 Encoding: UTF-8
 Imports:
     R6,
