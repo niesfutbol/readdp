@@ -21,6 +21,8 @@ check:
 clean:
 	rm --force *.tar.gz
 	rm --force --recursive tests/testthat/_snaps
+	rm --force --recursive readdp.Rcheck
+	rm --force --recursive tests/lib
 	rm --force NAMESPACE
 
 coverage: setup tests
