@@ -15,14 +15,14 @@ describe("path_worker", {
     expect_equal(obtained_filename, expected_filename)
   })
   it("Check data package path", {
-    expected_data_package_path <- "results/datapackages.json"
+    expected_data_package_path <- "results/datapackage.json"
     obtained_data_package_path <- Path_Worker$datapackage_path
     expect_equal(obtained_data_package_path, expected_data_package_path)
   })
   it("Check data package path: second example", {
     path_example <- "data/example.csv"
     Path_Worker <- new_path_worker(path_example)
-    expected_data_package_path <- "data/datapackages.json"
+    expected_data_package_path <- "data/datapackage.json"
     obtained_data_package_path <- Path_Worker$datapackage_path
     expect_equal(obtained_data_package_path, expected_data_package_path)
   })
