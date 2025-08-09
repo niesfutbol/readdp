@@ -19,6 +19,9 @@ describe("write_csv", {
   path_example <- "/workdir/tests/data/example.csv"
     write_csv(example_data, path_example)
     expect_true(file.exists(path_example))
-    expect_true(file.exists("/workdir/tests/data/datapackage.json"))
+    resource <- jsonlite::fromJSON("/workdir/tests/data/datapackage.json")$resources
+    expected_nrows <- 2
+    obtained_nrows <- nrow(resource)
+    expect_equal(obtained_nrows, expected_nrows)
   })
 })
