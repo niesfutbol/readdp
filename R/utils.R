@@ -16,3 +16,10 @@ new_path_worker <- function(path_example) {
   data_package_path <- glue::glue("{dirname(path_example)}/datapackage.json")
   return(data_package_path)
 }
+
+add_r_script_name_to_last_resource <- function(datapackage) {
+  r_script_name <- Sys.getenv("R_SCRIPT_NAME")
+  last_resource_index <- length(datapackage$resources)
+  datapackage$resources[[last_resource_index]]$history <- r_script_name
+  return(datapackage)
+}
