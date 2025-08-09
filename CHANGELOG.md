@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [unreleased] - 2025-08-09
+
+### Changed
+
+- `add_r_script_name_to_last_resource()` to `write_csv()`
+
 ## [0.1.0] - 2025-08-08
 
 ### Added
