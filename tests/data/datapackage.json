@@ -1,0 +1,44 @@
+{
+  "resources": [
+    {
+      "name": "example",
+      "path": "example.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "a",
+            "type": "integer"
+          },
+          {
+            "name": "b",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "example_2",
+      "path": "example_2.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "a",
+            "type": "integer"
+          },
+          {
+            "name": "b",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
