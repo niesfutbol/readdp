@@ -9,10 +9,16 @@ describe("write_csv", {
   )
   path_example <- "/workdir/borrame/example.csv"
   dir.create("borrame")
-  it("writes a csv and datapackage", {
+  it("writes a csv and datapackage when the folder is empty", {
     write_csv(example_data, path_example)
     expect_true(file.exists(path_example))
     expect_true(file.exists("/workdir/borrame/datapackage.json"))
     tear_down("/workdir/borrame")
+  })
+  it("writes a csv and datapackage when the folder is not empty", {
+  path_example <- "/workdir/tests/data/example.csv"
+    write_csv(example_data, path_example)
+    expect_true(file.exists(path_example))
+    expect_true(file.exists("/workdir/tests/data/datapackage.json"))
   })
 })
