@@ -16,7 +16,7 @@ describe("write_csv", {
   })
   it("writes a csv and datapackage when the folder is not empty", {
     path_example <- "/workdir/borrame/example_2.csv"
-    write_csv(example_data, path_example)
+    write_csv_with_existed_dp(example_data, path_example)
     expect_true(file.exists(path_example))
     resource <- jsonlite::fromJSON("/workdir/borrame/datapackage.json")$resources
     expected_nrows <- 2
