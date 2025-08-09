@@ -1,3 +1,4 @@
+#' @export
 write_csv <- function(datos, file) {
   Path_Worker <- new_path_worker(file)
   select_writer_if_exists(datos, Path_Worker)
