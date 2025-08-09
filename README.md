@@ -10,3 +10,14 @@ src="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg" align
 
 ## Step to use
 
+Escribe un `datapackage.json` con el **tibble** `example_data` en el folder `/workdir/deleteme/`:
+
+``` R
+example_data <- tibble::tibble(
+  a = 1:5,
+  b = letters[1:5]
+)
+path_example <- "/workdir/deleteme/example.csv"
+readdp::write_csv(example_data, path_example)
+```
+
