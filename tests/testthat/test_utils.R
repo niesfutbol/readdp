@@ -36,6 +36,5 @@ describe("Write environment variables to resource", {
       add_r_script_name_to_last_resource()
     obtained_r_script_name <- datapackage$resources[[length(datapackage$resources)]]$history
     expect_equal(obtained_r_script_name, expected_r_script_name)
-  }
-  )
+  })
 })
