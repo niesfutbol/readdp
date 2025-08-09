@@ -15,6 +15,8 @@ describe("write_csv", {
     expect_true(file.exists("/workdir/borrame/datapackage.json"))
   })
   it("writes a csv and datapackage when the folder is not empty", {
+    expected_r_script_name <- "/workdir/src/another_script.R"
+    Sys.setenv(R_SCRIPT_NAME = expected_r_script_name)
     path_example <- "/workdir/borrame/example_2.csv"
     write_csv(example_data, path_example)
     expect_true(file.exists(path_example))
@@ -22,6 +24,8 @@ describe("write_csv", {
     expected_nrows <- 2
     obtained_nrows <- nrow(resource)
     expect_equal(obtained_nrows, expected_nrows)
+    obtained_r_script_name <- resource[2,]$history
+    expect_equal(obtained_r_script_name, expected_r_script_name)
     tear_down("/workdir/borrame")
   })
 })
