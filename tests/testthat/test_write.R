@@ -8,7 +8,7 @@ describe("write_csv", {
     b = letters[1:5]
   )
   path_example <- "/workdir/borrame/example.csv"
-  dir.create("borrame")
+  dir.create("/workdir/borrame")
   it("writes a csv and datapackage when the folder is empty", {
     write_csv(example_data, path_example)
     expect_true(file.exists(path_example))
