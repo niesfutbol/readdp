@@ -7,13 +7,13 @@ write_csv <- function(datos, file) {
     write_csv_with_existed_dp(datos, file, )
     return()
   }
-  write_csv_with_not_existed_dp(datos, directory, Path_Worker)
+  write_csv_with_not_existed_dp(datos, Path_Worker)
 }
 
-write_csv_with_not_existed_dp <- function(datos, directory, path_worker) {
+write_csv_with_not_existed_dp <- function(datos, path_worker) {
   paquete <- frictionless::create_package() |>
     frictionless::add_resource(resource_name = path_worker$filename, data = datos)
-  paquete |> frictionless::write_package(directory)
+  paquete |> frictionless::write_package(path_worker$directory)
 }
 
 write_csv_with_existed_dp <- function(datos, file, directory) {
