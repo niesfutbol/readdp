@@ -24,7 +24,7 @@ describe("write_csv", {
     expected_nrows <- 2
     obtained_nrows <- nrow(resource)
     expect_equal(obtained_nrows, expected_nrows)
-    obtained_r_script_name <- resource[2,]$history
+    obtained_r_script_name <- resource[2, ]$history
     expect_equal(obtained_r_script_name, expected_r_script_name)
     tear_down("/workdir/borrame")
   })
