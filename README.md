@@ -10,6 +10,11 @@ src="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg" align
 
 ## Step to use
 
+Para instalar
+``` R
+remotes::install_github('niesfutbol/readdp')
+```
+
 Escribe un `datapackage.json` con el **tibble** `example_data` en el folder `/workdir/deleteme/`:
 
 ``` R
