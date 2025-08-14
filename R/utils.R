@@ -26,7 +26,15 @@ add_r_script_name_to_last_resource <- function(datapackage) {
 
 add_r_script_name_to_resource_from_name <- function(datapackage, resource_name) {
   r_script_name <- Sys.getenv("R_SCRIPT_NAME")
-  last_resource_index <- length(datapackage$resources)
-  datapackage$resources[[last_resource_index]]$history <- r_script_name
+  resource_index <- .obtain_the_right_index(datapackage, resource_name)
+  datapackage$resources[[resource_index]]$history <- r_script_name
   return(datapackage)
+}
+
+.obtain_the_right_index <- function(datapackage, resource_name) {
+  resource_index <- which(purrr::map_chr(datapackage$resources, ~ .x$name) == resource_name)
+  if (length(resource_index) == 0) {
+    stop(glue::glue("Resource '{resource_name}' not found in the datapackage."))
+  }
+  return(resource_index)
 }
