@@ -2,7 +2,7 @@
 write_csv <- function(datos, file) {
   Path_Worker <- new_path_worker(file)
   select_writer_if_exists(datos, Path_Worker) |>
-    add_r_script_name_to_last_resource() |>
+    add_r_script_name_to_resource_from_name(Path_Worker$filename) |>
     frictionless::write_package(Path_Worker$directory)
 }
 
