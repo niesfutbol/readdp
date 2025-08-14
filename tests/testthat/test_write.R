@@ -32,6 +32,6 @@ describe("write_csv", {
     expected_r_script_name <- "/workdir/src/another_script.R"
     Sys.setenv(R_SCRIPT_NAME = expected_r_script_name)
     path_example <- "/workdir/tests/data/example.csv"
-    write_csv(example_data, path_example)
+    replace_resource_in_datapackage(example_data, path_example)
   })
 })
