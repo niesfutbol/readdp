@@ -31,12 +31,6 @@ describe("path_worker", {
 describe("Write environment variables to resource", {
   expected_r_script_name <- "/workdir/src/test_script.R"
   Sys.setenv(R_SCRIPT_NAME = expected_r_script_name)
-  it("writes in the last resource the property `history`", {
-    datapackage <- frictionless::read_package("/workdir/tests/data/datapackage.json") |>
-      add_r_script_name_to_last_resource()
-    obtained_r_script_name <- datapackage$resources[[length(datapackage$resources)]]$history
-    expect_equal(obtained_r_script_name, expected_r_script_name)
-  })
   it("writes in the right resource the property `history`", {
     datapackage <- frictionless::read_package("/workdir/tests/data/datapackage.json") |>
       add_r_script_name_to_resource_from_name("example_2")

@@ -25,10 +25,3 @@ datapackage_with_existed_dp <- function(datos, path_worker, is_new) {
     frictionless::add_resource(resource_name = path_worker$filename, data = datos, replace = is_new)
   return(paquete)
 }
-
-replace_resource_in_datapackage <- function(datos, path_worker) {
-  Path_Worker <- new_path_worker(path_worker)
-  paquete <- frictionless::read_package(Path_Worker$datapackage_path) |>
-    frictionless::add_resource(resource_name = Path_Worker$filename, data = datos, replace = TRUE)
-  return(paquete)
-}
