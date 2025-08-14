@@ -37,4 +37,10 @@ describe("Write environment variables to resource", {
     obtained_r_script_name <- datapackage$resources[[length(datapackage$resources)]]$history
     expect_equal(obtained_r_script_name, expected_r_script_name)
   })
+  it("writes in the right resource the property `history`", {
+    datapackage <- frictionless::read_package("/workdir/tests/data/datapackage.json") |>
+      add_r_script_name_to_resource_from_name("example_2")
+    obtained_r_script_name <- datapackage$resources[[2]]$history
+    expect_equal(obtained_r_script_name, expected_r_script_name)
+  })
 })
