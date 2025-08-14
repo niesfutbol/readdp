@@ -23,3 +23,10 @@ add_r_script_name_to_last_resource <- function(datapackage) {
   datapackage$resources[[last_resource_index]]$history <- r_script_name
   return(datapackage)
 }
+
+add_r_script_name_to_resource_from_name <- function(datapackage, resource_name) {
+  r_script_name <- Sys.getenv("R_SCRIPT_NAME")
+  last_resource_index <- length(datapackage$resources)
+  datapackage$resources[[last_resource_index]]$history <- r_script_name
+  return(datapackage)
+}
